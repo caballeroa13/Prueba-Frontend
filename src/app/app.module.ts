@@ -7,10 +7,13 @@ import { AdminModule } from './paginas/admin/admin.module';
 import { UsuarioModule } from './paginas/usuario/usuario.module';
 import { HeaderComponent } from './shared/components/header/header.component';
 import { HeaderModule } from './shared/components/header/header.module';
+import {  NbCardModule, NbLayoutModule, NbListModule, NbThemeModule, NbButtonModule} from '@nebular/theme';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
     
   ],
   imports: [
@@ -18,7 +21,13 @@ import { HeaderModule } from './shared/components/header/header.module';
     AppRoutingModule,
     HeaderModule,
     AdminModule,
-    UsuarioModule
+    UsuarioModule,
+    NbThemeModule.forRoot({ name: 'default' }),
+    NbLayoutModule,
+    NbListModule,
+    NbCardModule,
+    NbButtonModule,
+    //BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
