@@ -19,8 +19,7 @@ import {  NbCardModule, NbLayoutModule, NbListModule, NbThemeModule, NbButtonMod
     NbThemeModule.forRoot({ name: 'default' }),
     NbCardModule,
     NbButtonModule,
-    NbUserModule,
-    
+    NbUserModule
   ],
   exports: [AdminComponent]
 })

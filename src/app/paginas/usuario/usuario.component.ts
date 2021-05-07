@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-usuario',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UsuarioComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { 
 
-  ngOnInit(): void {
   }
 
+  ngOnInit(): void {
+
+    let datos:any  = JSON.parse( localStorage.getItem('info'));
+    if(datos.tipo == 'admin'){
+    this.router.navigate(['admin']);}
+  }
+  logout() {
+    localStorage.clear();
+    this.router.navigate(['/inicio']);  }
 }

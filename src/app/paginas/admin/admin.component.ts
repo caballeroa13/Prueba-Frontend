@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -10,7 +11,7 @@ export class AdminComponent implements OnInit {
   
   public users: { name: string, title: string }[];
   
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
     this.users = [
@@ -20,6 +21,13 @@ export class AdminComponent implements OnInit {
       { name: 'Perry Cox', title: 'Doctor of Medicine' },
       { name: 'Ben Sullivan', title: 'Carpenter and photographer' },
     ];
+    let datos :any=JSON.parse( localStorage.getItem('info'));
+    debugger
+    if(datos.tipo == 'usuario'){
+    this.router.navigate(['usuario']);}
   }
+  logout() {
+    localStorage.clear();
+    this.router.navigate(['/inicio']);  }
 
 }
